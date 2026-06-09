@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Convite 3D Cinematográfico</title>
+
+  <link rel="stylesheet" href="style.css"/>
+
+  <!-- GSAP -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+</head>
+
+<body>
+
+<div class="scene">
+
+  <!-- FUNDO -->
+  <img class="bg" id="bg" src="fundo_madeira.png" />
+
+  <!-- ENVELOPE -->
+  <div class="envelope" id="envelope">
+    <img id="envImg" src="envelope_fechado.png" />
+    <p class="hint">Toque para abrir o convite</p>
+  </div>
+
+  <!-- CARTA -->
+  <div class="letter" id="letter">
+
+    <img class="paper" src="carta.png" />
+
+    <form id="rsvpForm" class="form">
+
+      <h2>Confirmação de Presença</h2>
+
+      <input name="nome" type="text" placeholder="Seu nome" required />
+      <input name="telefone" type="tel" placeholder="telefone" required />
+      <input name="quantidade" type="number" placeholder="Quantidade de pessoas" min="1" required />
+
+      <button type="submit">Confirmar presença</button>
+
+      <a class="btn" href="https://maps.app.goo.gl/UxNT4Vffb6LkPJ3K6" target="_blank">
+        📍 Localização
+      </a>
+
+    </form>
+
+  </div>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
