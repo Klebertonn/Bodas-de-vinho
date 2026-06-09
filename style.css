@@ -44,19 +44,21 @@ body {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  z-index: 20;
   cursor: pointer;
-  z-index: 10;
-  transform-style: preserve-3d;
 }
 
-/* área invisível de toque */
+/* 🔥 área invisível gigante de clique */
 .envelope::before {
   content: "";
   position: absolute;
-  top: -60px;
-  left: -60px;
-  right: -60px;
-  bottom: -60px;
+
+  top: -120px;
+  left: -120px;
+  right: -120px;
+  bottom: -120px;
+
+  z-index: -1;
 }
 
 .envelope img {
