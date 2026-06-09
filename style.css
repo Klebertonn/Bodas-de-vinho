@@ -53,10 +53,10 @@ body {
   content: "";
   position: absolute;
 
-  top: -120px;
-  left: -120px;
-  right: -120px;
-  bottom: -120px;
+  top: -200px;
+  left: -220px;
+  right: -220px;
+  bottom: -220px;
 
   z-index: -1;
 }
