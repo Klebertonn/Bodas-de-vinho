@@ -48,6 +48,21 @@ body {
   cursor: pointer;
 }
 
+.hint {
+  color: black;
+  font-size: 14px;
+
+  /* 🔥 centralização */
+  text-align: center;
+  width: 100%;
+
+  margin-top: -100px;
+
+  /* garante alinhamento com o envelope */
+  display: flex;
+  justify-content: center;
+}
+
 /* 🔥 área invisível gigante de clique */
 .envelope::before {
   content: "";
