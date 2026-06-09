@@ -45,7 +45,7 @@ body {
 /* CARTA */
 .letter {
   position: absolute;
-  top: 12%;
+  top: 5%;
   left: 50%;
   transform: translate(-50%, 80%);
   opacity: 0;
@@ -61,7 +61,7 @@ body {
 /* FORM */
 .form {
   position: absolute;
-  top: 62%;
+  top: 75%;
   left: 50%;
   width: 60%;
   transform: translate(-50%, 0%);
