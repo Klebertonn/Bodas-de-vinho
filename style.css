@@ -68,10 +68,10 @@ body {
   content: "";
   position: absolute;
 
-  top: -190px;
-  left: -190px;
-  right: -190px;
-  bottom: -190px;
+  top: -170px;
+  left: -170px;
+  right: -170px;
+  bottom: -170px;
 
   z-index: -1;
 }
