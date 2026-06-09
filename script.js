@@ -70,20 +70,23 @@ tl.to(envelope, {
 /* =========================
    ABERTURA DO CONVITE
 ========================= */
-envelope.addEventListener("pointerdown", () => {
+
+const openEnvelope = () => {
   if (opened) return;
   opened = true;
 
   envImg.src = "envelope_abrindo_2.png";
 
-  requestAnimationFrame(() => {
-    setTimeout(() => {
-      envImg.src = "envelope_abrindo_3.png";
-      envelope.style.filter = "blur(1px)";
-      tl.play();
-    }, 250);
-  });
-});
+  setTimeout(() => {
+    envImg.src = "envelope_abrindo_3.png";
+    envelope.style.filter = "blur(1px)";
+    tl.play();
+  }, 250);
+};
+
+/* 🔥 FIX REAL: funciona em qualquer tela */
+envelope.addEventListener("pointerdown", openEnvelope);
+envelope.addEventListener("click", openEnvelope); // fallback desktop
 
 /* =========================
    GOOGLE FORMS RSVP
