@@ -34,7 +34,7 @@ tl.to(envelope, {
 })
 
 .to(envelope, {
-  opacity: 0.4,
+  opacity: 0.0,
   z: -120,
   duration: 0.7,
   ease: "power2.inOut"
@@ -64,6 +64,7 @@ tl.to(envelope, {
     filter: "blur(0px)",
     duration: 1.4,
     ease: "power3.out"
+
   }
 );
 

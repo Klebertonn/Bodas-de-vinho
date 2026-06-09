@@ -5,9 +5,12 @@
 
 body {
   margin: 0;
-  overflow: hidden;
-  font-family: Arial, sans-serif;
+  font-family: Arial;
   background: black;
+
+  /* 🔥 permite scroll no desktop */
+  overflow-x: hidden;
+  overflow-y: auto;
 }
 
 .scene {
@@ -18,11 +21,21 @@ body {
 
 /* FUNDO */
 .bg {
-  position: absolute;
+  position: fixed;
+  top: 0;
+  left: 0;
+
   width: 100%;
   height: 100%;
+
+  /* 🔥 garante cobertura total */
+  min-width: 100vw;
+  min-height: 100vh;
+
   object-fit: cover;
-  transform-origin: center;
+  transform: scale(1.05); /* 👈 remove bordas pretas no scroll */
+
+  z-index: -1;
 }
 
 /* ENVELOPE */
@@ -32,8 +45,18 @@ body {
   left: 50%;
   transform: translate(-50%, -50%);
   cursor: pointer;
-  z-index: 2;
-  text-align: center;
+  z-index: 10;
+  transform-style: preserve-3d;
+}
+
+/* área invisível de toque */
+.envelope::before {
+  content: "";
+  position: absolute;
+  top: -60px;
+  left: -60px;
+  right: -60px;
+  bottom: -60px;
 }
 
 .envelope img {
@@ -47,13 +70,13 @@ body {
   position: absolute;
   top: 5%;
   left: 50%;
-  transform: translate(-50%, 80%);
+  transform: translate(-50%, 100%);
   opacity: 0;
   z-index: 3;
 }
 
 .paper {
-  width: 800px;
+  width: 850px;
   max-width: 92vw;
   filter: drop-shadow(0 25px 40px rgba(0,0,0,0.5));
 }
@@ -63,7 +86,7 @@ body {
   position: absolute;
   top: 75%;
   left: 50%;
-  width: 60%;
+  width: 100%;
   transform: translate(-50%, 0%);
   display: flex;
   flex-direction: column;
@@ -72,7 +95,7 @@ body {
   background: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(6px);
 
-  padding: 20px;
+  padding: 50px;
   border-radius: 14px;
 
   box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25);
@@ -83,19 +106,42 @@ body {
    TABLET
 ========================= */
 
-@media (max-width: 1024px) {
+@media (min-width: 1024px) {
 
   .envelope img {
-    width: 550px;
+    width: clamp(600px, 35vw, 900px);
   }
 
   .paper {
-    width: 650px;
+    width: clamp(700px, 50vw, 1000px);
   }
 
-  .form {
-    width: 60%;
-    top: 75%;
+   .form {
+    width: clamp(480px, 32vw, 650px);
+    padding: 24px;
+    gap: 12px;
+  }
+
+  .form h2 {
+    font-size: 20px;
+    color: black;
+  }
+
+  input {
+    padding: 12px;
+    font-size: 15px;
+    color: black;
+  }
+
+  button {
+    padding: 12px;
+    font-size: 15px;
+  }
+
+  .btn {
+    padding: 25px;
+    font-size: 25px;
+    align-content: center;
   }
 }
 
@@ -120,7 +166,7 @@ body {
   .form {
     width: 60%;
     top: 75%;
-    padding: 10px;
+    padding: 1px;
   }
 
   .form h2 {
